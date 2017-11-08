@@ -1,0 +1,30 @@
+<div>
+  <table border="1">
+		<thead>
+      <tr>
+        <th>BASE</th>
+        <th ng-repeat="a in x">
+          <button ng-click="delX()"> - </button>
+          <label>{{a}}</label>
+          <button type="button" ng-click="addX()"> + </button>
+        </th>
+        <th ng-repeat="b in f">
+          <button ng-click="delF()"> - </button>
+          <label>{{b}}</label>
+          <button type="button" ng-click="addF()"> + </button>
+        </th>
+      </tr>
+		</thead>
+		<tbody>
+      <tr ng-repeat="c in f">
+        <td><label>{{c}}</label></td>
+        <td ng-repeat="b in x">
+          <input type="text" name="{{b}}"/>
+        </td>
+        <td ng-repeat="q in f">
+          <input type="text" name="{{q}}"/>
+        </td>
+      </tr>
+		</tbody>
+  </table>
+</div>

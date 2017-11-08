@@ -1,0 +1,37 @@
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<div class="jumbotron jumbotron-fluid" style="padding-top: 5px;">
+		<div class="container">
+			<h1 class="logo">Ensinex</h1>
+			<p class="lead">
+			  Explicação das Variaveis de Folga !!
+			</p>
+			<blockquote class="blockquote text-center">
+			  <div class="mb-0">
+			  	<a ng-if="!ObjOperacao">MAXIMIZAR:&nbsp;</a>
+			  	<a ng-if="ObjOperacao">MINIMIZAR:&nbsp;</a>
+			  	<a ng-repeat="fun in funcaoZ">{{testeSinal(fun.valor, $index)}}{{fun.valor}}&nbsp;{{fun.xis}}</a>
+			  </div>
+			  <footer class="blockquote-footer" ng-if="!ObjOperacao">Essa é a Função Z com o Objetivo de Maximizar</footer>
+			  <footer class="blockquote-footer" ng-if="ObjOperacao">Essa é a Função Z com o Objetivo de Minimizar</footer>
+			  <!--<footer class="blockquote-footer">Adicionamos Para Cada Restrição uma Variavel de Folga</footer>-->
+			</blockquote>
+
+			
+			<blockquote class="blockquote text-center" ng-repeat="ret in restricoes">
+			  <div class="mb-0">
+			  	<a ng-repeat="fun in ret">{{testeSinal(fun.valor, $index)}}{{fun.valor}}&nbsp;{{fun.xis}}</a>
+			  	<a>+ 1 F{{$index+1}}</a>
+			  	<a>{{ret[ret.length-1].operador}}&nbsp;{{ret[ret.length-1].valorB}}</a>
+			  </div>
+			  <footer class="blockquote-footer">Adicionamos Para Cada Restrição uma Variavel de Folga que chamamos de F{{$index+1}}</footer>
+			</blockquote>
+			
+			<div class="d-flex justify-content-around">
+			  <div class="p-2"><button class="btn btn-danger" ui-sref="#">Calcelar</button></div>
+			  <div class="p-2"> </div>
+			  <div class="p-2"><button class="btn btn-primary" ng-click="tabelaDosCalculos(ObjOperacao, funcaoZ, restricoes)">Proximo Passo</button></div>
+			</div>
+
+		</div>
+	</div>
+</div>

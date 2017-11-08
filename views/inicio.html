@@ -1,0 +1,36 @@
+<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 logo">Ensinex</h1>
+      <p class="lead text-center">Selecione o objetivo da operação Maximizar ou Minimizar e adicione a função! </p>
+      
+      <div class="input-group">
+        <select class="custom-select" ng-options="item.name for item in objOperacao" ng-model="escolhaObjOperacao"></select>
+        <label class="my-text">&nbsp; Z = &nbsp;</label>
+        <input class="form-control" type="text" ng-model="funcaoZ" placeholder="Exemplo:  2X1 + 23X2 - 10X3" funcao-z func-index="0">
+      </div>
+
+      <p class="lead" style="margin-top: 20px;">Adicione as Restrições</p>
+
+      <div align="center" style="margin-top: 2px;">
+        <p class="remover-regra" ng-click="removerRegra(restricoes)">Remover Restrições<i class="fa fa-angle-up fa-3x " aria-hidden="true"></i></p>
+      </div>
+
+      <div class="input-group regra" ng-repeat="regra in restricoes track by $index">
+        <label class="my-text">{{$index + 1}}º&nbsp;</label>
+        <input class="form-control" type="text" ng-model="restricoes[$index]" placeholder="Exemplo:  X1 + 5X2 <= 100" restricoes-z func-index="{{$index + 1}}">
+      </div>
+
+      <div align="center" style="margin-top: 2px;">
+        <p class="adicionar-regra" ng-click="adicionarRegra(restricoes)">Adiconar Restrições<i class="fa fa-angle-down fa-3x " aria-hidden="true"></i></p>
+      </div>
+      
+
+      <button type="button" class="btn btn-primary my-btn" ng-click="gerarTabela(escolhaObjOperacao.value, funcaoZ, restricoes)">Proximo Passo</button>
+      <button type="button" class="btn btn-primary my-btn" ng-click="calculaMax()">Calcular Max</button>
+
+      <!-- <button type="button" class="btn btn-primary my-btn" ui-sref="passoapasso({operacao: escolhaObjOperacao.value, funcaoZ: tabela, restricoes: tabelaRestricoes})">Solução Passo a Passo</button> -->
+
+    </div>
+  </div>
+</div>

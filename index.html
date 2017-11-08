@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ensinex">
+<head>
+  <meta charset="utf-8">
+  <title>Ensinex</title>
+
+  <!-- Dependencias de bibliotecas -->
+  <script src="libs/jquery/jquery-3.2.1.min.js"></script>
+  <script src="libs/angularjs/angular.min.js"></script>
+  <script src="libs/angularjs/angular-ui-router.min.js"></script>
+
+  <script src="libs/bootstrap-4.0.0-beta.2/js/popper.js"></script>
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-beta.2/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-beta.2/css/bootstrap-reboot.min.css">
+  <script src="libs/bootstrap-4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="libs/bootstrap-4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="libs/icones/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+<!-- ================================= Dependencias de diretivas ou codigogerado ================================ -->
+  <!-- app -->
+  <script src="javascript/app.js"></script>
+
+  <!-- Configurações -->
+  <script src="javascript/config/routeConfig.js"></script>
+
+  <!-- Controles -->
+  <script src="javascript/controllers/ensinexMainCtrl.js"></script>
+  <script src="javascript/controllers/passoApassoCtrl.js"></script>
+  <script src="javascript/controllers/calculaMaxCtrl.js"></script>
+
+  <!-- Diretivas -->
+  <script src="javascript/directives/funcaoZDirective.js"></script>
+  <script src="javascript/directives/restricoesZDirective.js"></script>
+
+  <!-- Serviços -->
+  <script src="javascript/services/funcaoZService.js"></script>
+  <script src="javascript/services/acessoLiberadoService.js"></script>
+  
+</head>
+<body>
+  <div ui-view></div>
+</body>
+</html>
